@@ -1,14 +1,19 @@
 const mainContainer = document.querySelector('#container');
 const body = document.querySelector('body');
 
+makeGrid(16, 16);
+createButton();
+
+
 function makeGrid(rows, columns) {
     container.style.setProperty('--grid-rows', rows);
     container.style.setProperty('--grid-columns', columns);
-    container.style.width = '960px';
-    container.style.height = '960px';
+    container.style.width = '600px';
+    container.style.height = '600px';
     container.style.overflow = 'hidden';
     for (i = 0; i < rows * columns; i++) {
         let cell = document.createElement('div');
+        cell.style.backgroundColor = 'white';
         cell.style.minHeight = '0';
         cell.style.minWidth = '0';
         cell.style.overflow = 'hidden';
@@ -18,14 +23,12 @@ function makeGrid(rows, columns) {
         });
     }
 }
-createButton();
-
-makeGrid(16, 16);
 
 function createButton() {
     const btn = document.createElement('button');
     btn.style.width = '256px';
     btn.style.height = '32px';
+    btn.style.margin = '24px'
     btn.innerText = 'RESET!';
     body.insertBefore(btn, container).className = 'btn';
     btn.addEventListener('click', () => {
