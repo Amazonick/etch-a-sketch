@@ -4,7 +4,6 @@ const body = document.querySelector('body');
 makeGrid(16, 16);
 createButton();
 
-
 function makeGrid(rows, columns) {
     container.style.setProperty('--grid-rows', rows);
     container.style.setProperty('--grid-columns', columns);
@@ -17,6 +16,8 @@ function makeGrid(rows, columns) {
         cell.style.minHeight = '0';
         cell.style.minWidth = '0';
         cell.style.overflow = 'hidden';
+        cell.style.padding = '0';
+        cell.style.border = '0';
         container.appendChild(cell).className = 'grid-item';
         cell.addEventListener('mouseover', () => {
             cell.style.backgroundColor = 'black';
@@ -28,9 +29,8 @@ function createButton() {
     const btn = document.createElement('button');
     btn.style.width = '256px';
     btn.style.height = '32px';
-    btn.style.margin = '24px'
+    btn.style.margin = '24px';
     btn.innerText = 'RESET!';
-    body.insertBefore(btn, container).className = 'btn';
     btn.addEventListener('click', () => {
         document.querySelectorAll('.grid-item').forEach((e) => e.remove());
         let gridInput = prompt(
@@ -44,4 +44,5 @@ function createButton() {
         columns = gridInput;
         makeGrid(rows, columns);
     });
+    body.insertBefore(btn, container).className = 'reset-btn';
 }
