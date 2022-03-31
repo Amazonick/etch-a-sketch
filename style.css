@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: black;
 }
 
 :root {
@@ -20,7 +21,3 @@ body {
     border: 0.1px solid #ddd;
     text-align: center;
 }
-
-/*.grid-item:hover {
-      background-color: lightgray;
-  } */
