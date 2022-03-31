@@ -1,19 +1,24 @@
 body {
-  display: grid;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+:root {
+    --grid-columns: 1;
+    --grid-rows: 1;
 }
 
 #container {
-  display: grid;
-  grid-template-rows: repeat(var(--grid-rows), 1fr);
-  grid-template-columns: repeat(var(--grid-columns), 1fr);
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
 }
 
 .grid-item {
-  padding: 1em;
-  border: 0.1px solid #ddd;
-  text-align: center;
+    padding: 1em;
+    border: 0.1px solid #ddd;
+    text-align: center;
 }
 
 /*.grid-item:hover {
